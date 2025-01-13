@@ -1,0 +1,26 @@
+﻿using TesteTargetSistemas.Exercicios.PrimeiroExercicio;
+using TesteTargetSistemas.Exercicios.Fibonacci;
+using TesteTargetSistemas.Exercicios.Faturamento;
+using TesteTargetSistemas.Exercicios.FaturamentoMensal;
+using TesteTargetSistemas.Exercicios.ReverteString;
+
+Console.WriteLine("TESTE TARGET SISTEMAS");
+Console.WriteLine($"Exercício 1 ------------------------- {PrimeiroExercicio.Resultado}");
+var fib = new Fibonacci(5000000);
+Console.WriteLine("======================================================================================================");
+Console.WriteLine($"Exercício Fibonacci ------------------------- {fib.Calcula()}");
+Console.WriteLine("======================================================================================================");
+var faturamentos = new CalculoFaturamento();
+Console.WriteLine($"Menor Faturamento:      {faturamentos.GetMenorFaturamento()}");
+Console.WriteLine($"Maior Faturamento:      {faturamentos.GetMaiorFaturamento()}");
+Console.WriteLine($"Media: {faturamentos.Media.ToString("F")}");
+Console.Write("Valores Acima da Média: \n[ ");
+faturamentos.ListaFaturamentoAcimaDaMedia().ForEach(f => Console.Write($"{f}, "));
+Console.WriteLine(" ]");
+Console.WriteLine("======================================================================================================");
+var faturamentoEstado = new FaturamentoMensal();
+Console.WriteLine($"Total: {faturamentoEstado.Total.ToString("F")}");
+Console.WriteLine($"{Estado.MG} - {faturamentoEstado.GetPercentualByEstado(Estado.MG).ToString("F")}%");
+Console.WriteLine("======================================================================================================");
+Console.WriteLine("Inverte a palavra \"abacaxi\"");
+Console.Write(InverteString.Inverte("abacaxi"));
